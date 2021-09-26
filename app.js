@@ -9,9 +9,11 @@ let message = ""
 let messageEl = document.getElementById("message-el")
 let sumEl = document.getElementById("sum-el")
 let cardsEl = document.getElementById("cards-el")
+let allCards = [];
 
 
-function startGame() {
+
+function renderGame() {
     cardsEl.textContent = "Cards: " + firstCard + " " + secondCard;
     sumEl.textContent = "Sum: " + sum
     if (sum <= 20) {
@@ -27,5 +29,7 @@ function startGame() {
 }
 
 function newCard() {
-    console.log("new card")
+    const newCard = Math.floor(Math.random() * 10) + 2;
+    sum += newCard;
+    renderGame();
 }
